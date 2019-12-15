@@ -11,9 +11,14 @@ var ProductSchema = new mongoose.Schema({
         type: String
     },
     img: {
+        name: String,
         data: Buffer,
         contentType: String
-    } 
+    },
+    created: {
+        type: Date,
+        default: Date.now
+    }
 });
 
 mongoose.model('Product', ProductSchema);

@@ -11,6 +11,9 @@
             <th>Name</th>
             <th>Category</th>
             <th>Brand</th>
+            <th>Image</th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
     </thead>
     <tbody>
@@ -20,7 +23,12 @@
             <td>{{ this.category }}</td>
             <td>{{ this.brand }}</td>
             <td>
+                <a href="/product/image/{{ this._id }}"><i class="fa fa-file-image-o" aria-hidden="true"></i></a>
+            </td>
+            <td>
                 <a href="/product/{{ this._id }}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+            </td>
+            <td>
                 <a href="/product/delete/{{ this._id }}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
             </td>
         </tr>
