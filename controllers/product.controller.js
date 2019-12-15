@@ -112,7 +112,6 @@ router.get('/delete/:id', (req, res) => {
 // Show Image.
 router.get('/image/:id', (req, res) => {
     Product.findById(req.params.id, (err, doc) => {
-        console.log(doc);
         if (!err) {
             // console.log(doc);
             var base64 = doc.img.data.toString('base64');
