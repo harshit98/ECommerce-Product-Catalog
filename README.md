@@ -46,11 +46,16 @@ var ProductSchema = new mongoose.Schema({
 
 ## Local Deployment
 
-Create a `uploads` folder inside `/ECommerce-Product-Catalog`. This folder will help to keep a track of uploaded product image.
+Create a `uploads` folder inside `/ECommerce-Product-Catalog`. This folder will help to keep a track of uploaded product image. Make sure your MongoDB is installed and running in background.
 
 Run server: `nodemon server.js`
 
 After running server, redirect to `http://localhost:3000/product`
+
+### Database Configuration
+
+- Database name - `ProductDB`
+- Collections - `products`
 
 ## Project Demo Link
 
