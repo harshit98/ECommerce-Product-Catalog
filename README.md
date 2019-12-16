@@ -59,7 +59,9 @@ After running server, redirect to `http://localhost:3000/product`
 
 ### Run Tests
 
-To run tests use `npm test`.
+To run tests use `npm test`
+
+We're using `jest` for unit tests.
 
 ## Project Demo Link
 
