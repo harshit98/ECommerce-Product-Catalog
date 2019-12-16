@@ -84,6 +84,64 @@ router.get('/list', (req, res) => {
     });
 });
 
+// Filter Product Records.
+router.get('/filter', (req, res) => {
+    Product.find((err, doc) => {
+        if (!err) {
+            res.render('product/filter', {
+                list: doc
+            });
+        }
+        else {
+            console.log('Error in retrieving product list : ' + err);
+        }
+    });
+});
+
+router.post('/filter', (req, res) => {
+    var filterName = req.body.name;
+    var filterBrand = req.body.brand;
+    var filterCategory = req.body.category;
+
+    let filterParameters;
+
+    if (filterName != '' && filterCategory != '' && filterBrand != '') {
+        filterParameters = { $and: [{ name: filterName }, { $and: [{ category: filterCategory }, { brand: filterBrand }] }]};
+    }
+    else if (filterName == '' && filterCategory != '' && filterBrand != '') {
+        filterParameters = { $and: [{ category: filterCategory }, { brand: filterBrand }] };
+    }
+    else if (filterName != '' && filterCategory == '' && filterBrand != '') {
+        filterParameters = { $and: [{ name: name }, { brand: filterBrand }] };
+    }
+    else if (filterName != '' && filterCategory != '' && filterBrand == '') {
+        filterParameters = { $and: [{ name: name }, { category: filterCategory }] };
+    }
+    else if (filterName == '' && filterCategory == '' && filterBrand != '') {
+        filterParameters = { brand: filterBrand };
+    }
+    else if (filterName != '' && filterCategory == '' && filterBrand == '') {
+        filterParameters = { name: filterName };
+    }
+    else if (filterName == '' && filterCategory != '' && filterBrand == '') {
+        filterParameters = { category:filterCategory };
+    }
+    else {
+        filterParameters = {};
+    }
+
+    Product.find(filterParameters, (err, doc) => {
+        if (!err) {
+            res.render('product/filter', {
+                list: doc
+            });
+        }
+        else {
+            console.log('Error in retrieving product list : ' + err);
+        }
+    });
+});
+
 // Update Product.
 router.get('/:id', (req, res) => {
     Product.findById(req.params.id, (err, doc) => {
