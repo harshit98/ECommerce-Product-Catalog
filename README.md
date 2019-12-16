@@ -57,6 +57,10 @@ After running server, redirect to `http://localhost:3000/product`
 - Database name - `ProductDB`
 - Collections - `products`
 
+### Run Tests
+
+To run tests use `npm test`.
+
 ## Project Demo Link
 
 Video of working project: https://youtu.be/5HZrdHXCWrY
