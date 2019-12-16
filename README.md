@@ -33,7 +33,7 @@ var ProductSchema = new mongoose.Schema({
 
 1. API supports CRUD database operations.
 2. Filter based search in database.
-3. Written tests for API.
+3. Unit tests for testing API endpoints.
 4. Proper URL routing.
 5. Functionality to store product image in database.
 6. Functionality to fetch product image from database.
@@ -46,6 +46,7 @@ Deployment Link:
 
 - MongoDB.
 - ExpressJS.
+- Jest.
 
 ## Local Deployment
 
