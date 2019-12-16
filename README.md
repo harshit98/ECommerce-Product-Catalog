@@ -38,8 +38,6 @@ var ProductSchema = new mongoose.Schema({
 5. Functionality to store product image in database.
 6. Functionality to fetch product image from database.
 
-
-
 ## Test Link
 
 Deployment Link: 
@@ -50,6 +48,8 @@ Deployment Link:
 - ExpressJS.
 
 ## Local Deployment
+
+Create a `uploads` folder inside `/ECommerce-Product-Catalog`. This folder will help to keep a track of uploaded product image.
 
 Run server: `nodemon server.js`
 
