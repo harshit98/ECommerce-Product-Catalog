@@ -38,10 +38,6 @@ var ProductSchema = new mongoose.Schema({
 5. Functionality to store product image in database.
 6. Functionality to fetch product image from database.
 
-## Test Link
-
-Deployment Link: 
-
 ## Tech Stack
 
 - MongoDB.
@@ -58,4 +54,4 @@ After running server, redirect to `http://localhost:3000/product`
 
 ## Project Demo Link
 
-Video of working project: 
+Video of working project: https://youtu.be/5HZrdHXCWrY
